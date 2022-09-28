@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="css/css.css"/>
+</head>
+<body onload="auto_1(); auto_2()" background="background.png">
+    <button class="pop_menu" id="pop_menu_id" onclick="pop_menu()">>></button>
+    <button class="info" id="info_id" onclick="info_f()">Info</button>
+    <div class="info_div" id="info_div_id">
+        <p class="info_p">Info about user's</p>
+        <div class="info_div_2" id="info_div_2_id">
+            <p class="info_p_2" id="info_p_2_id"></p>
+        </div>
+    </div>
+    <p class="register_complete_nick" id="register_complete_nick_id"></p>
+    <p class="tittle_website">Clicker</p>
+<div class="ddd">
+    <button class="remove_data" id="remove_data_id" onclick="remove_data_f()">Remove data</button>
+</div>
+    <div class="register_complete" id="register_complete_id">  
+        <p class="warning">alert</p>
+        <button class="hide_alert" onclick="hide_alert_f()">×</button>
+        <p class="register_complete_p" id="register_complete_p_id"></p>
+    </div>
+<form class="form_1" id="form_1_id">
+    <p class="pass_busy" id="pass_busy_id">Password busy!</p>
+    <p class="nick_busy" id="nick_busy_id">Nickname busy!</p>
+    <input class="nickname" id="nickname_id" placeholder="You'r nickname">
+    <input class="password" id="password_id" placeholder="You'r password">
+    <input class="color_change" id="color_change_id" type="color">
+    <input class="photo" id="photo_id" type="file" accept=".png, .jpg, .jpeg">
+    <p class="reg_p">Register</p>
+    <button class="reg_btn" id="reg_btn_id" type="button" onclick="reg_btn()">Register</button>
+</form>
+
+<form class="form_1_1" id="form_1_1_id">
+    <p class="pass_wrong" id="pass_wrong_id">Password wrong!</p>
+    <p class="nick_wrong" id="nick_wrong_id">Nickname wrong!</p>
+    <input class="nickname_2" id="nickname_2_id" placeholder="You'r nickname">
+    <input class="password_2" id="password_2_id" placeholder="You'r password">
+    <p class="reg_p_2">Login</p>
+ <a href="General.html"> <button type="button" class="log_btn" id="log_btn_id" onclick="log_btn()">login</button></a>
+</form>
+</body>
+<script src="js/js.js"></script>
+</html>
