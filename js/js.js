@@ -1,26 +1,4 @@
-function pop_menu(){
-    localStorage.setItem('r', '1') 
-    if(localStorage.r == '1'){    
-        document.getElementById('form_1_id').style.display = 'block'
-        document.getElementById('form_1_1_id').style.animation = 'left 0.5s'
-        setTimeout("localStorage.setItem('l', 'a')", 500) 
-        setTimeout("localStorage.removeItem('r')", 500) 
-        setTimeout(" document.getElementById('form_1_1_id').style.animationPlayState = 'paused'", 400)
-        document.getElementById('form_1_id').style.animation = 'left_2 0.5s'
-        setTimeout(" document.getElementById('form_1_id').style.animationPlayState = 'paused'", 400)
-    }else{
 
-    }
-    if(localStorage.l == 'a'){ 
-        document.getElementById('form_1_1_id').style.animation = 'left_1_2 0.5s'
-        document.getElementById('form_1_id').style.animation = 'left_2_1 0.5s'
-        setTimeout("localStorage.removeItem('l')", 500)
-    }else{
-        document.getElementById('form_1_id').style.display = 'block'
-        document.getElementById('form_1_1_id').style.animation = 'left 0.5s'
-        localStorage.setItem('r', '1')
-    }
-}
 function auto_1(){
     localStorage.removeItem('l')
 }      
@@ -37,11 +15,10 @@ function info_f(){
     document.getElementById('remove_data_id').style.opacity = '0'
 }
 const cost = (JSON.parse(localStorage.getItem('cost')))
-const user_pass = (JSON.parse(localStorage.getItem('user_pass')))
+const user_pass =  (JSON.parse(localStorage.getItem('user_pass')))
 const img_src = (JSON.parse(localStorage.getItem('url_img')))
 const user = (JSON.parse(localStorage.getItem('user')))
 const color = (JSON.parse(localStorage.getItem('color')))
-
 function remove_data_f(){
     console.log(user, user_pass, img_src , cost , color)
     let length = cost.length
@@ -61,11 +38,17 @@ function remove_data_f(){
     localStorage.setItem('user', JSON.stringify(remove_4))
     localStorage.setItem('color', JSON.stringify(remove_5))
     }
+    
 function reg_btn(){
     let inp_log_nick = document.getElementById('nickname_id').value
     localStorage.setItem('index_user_list',inp_log_nick)
     let inp_color = document.getElementById('color_change_id').value
     let inp_nick = document.getElementById('nickname_id').value
+    try{
+    const search_nick_2 = user.some(element => element == inp_nick)
+    }catch{
+        document.getElementById('register_again_id').style.opacity = '1'
+    }
     const search_nick_2 = user.some(element => element == inp_nick)
     let inp_pass = document.getElementById('password_id').value
     const search_pass_2 = user_pass.some(element => element == inp_pass)
@@ -144,10 +127,18 @@ function reg_btn(){
     }else{
 
     }
+    if(inp_nick.length >= 1){
+        localStorage.setItem('test', 'z')
+    }else{
+        alert('add f')
+    }
 
 }
 function hide_alert_f(){
     document.getElementById('register_complete_id').style.opacity = '0'
+}
+function hide_alert_2_f(){
+    document.getElementById('register_again_id').style.opacity = '0'
 }
 function log_btn(){
     let inp_log_nick = document.getElementById('nickname_2_id').value
@@ -257,6 +248,47 @@ function auto_2(){
     
     document.getElementById('info_p_2_id').innerHTML = show
     
+}
+function pop_menu(){
+    localStorage.setItem('r', '1') 
+    if(localStorage.r == '1'){    
+        document.getElementById('form_1_id').style.display = 'block'
+        document.getElementById('form_1_1_id').style.animation = 'left 0.5s'
+        setTimeout("localStorage.setItem('l', 'a')", 500) 
+        setTimeout("localStorage.removeItem('r')", 500) 
+        setTimeout(" document.getElementById('form_1_1_id').style.animationPlayState = 'paused'", 400)
+        document.getElementById('form_1_id').style.animation = 'left_2 0.5s'
+        setTimeout(" document.getElementById('form_1_id').style.animationPlayState = 'paused'", 400)
+    }else{
+
+    }
+    if(localStorage.l == 'a'){ 
+        document.getElementById('form_1_1_id').style.animation = 'left_1_2 0.5s'
+        document.getElementById('form_1_id').style.animation = 'left_2_1 0.5s'
+        setTimeout("localStorage.removeItem('l')", 500)
+    }else{
+        document.getElementById('form_1_id').style.display = 'block'
+        document.getElementById('form_1_1_id').style.animation = 'left 0.5s'
+        localStorage.setItem('r', '1')
+    }
+}
+function auto_add_2(){
+    if(localStorage.user.length > 1){
+        localStorage.setItem('test', 'z')
+    }else{
+    localStorage.removeItem('test', 'z')
+    }
+}
+function auto_add(){
+       if(localStorage.test == 'z'){
+       
+       }else{
+        localStorage.setItem('user', '["test"]')
+        localStorage.setItem('user_pass', '["1234"]')
+        localStorage.setItem('cost', '["0"]')
+        localStorage.setItem('url_img', '["photo.png"]')
+        localStorage.setItem('color', '["#000000"]')
+       }
 }
 function auto_3(){
     let key = localStorage.getItem('index_nick')

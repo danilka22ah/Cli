@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/css.css"/>
 </head>
 <body onload="auto_1(); auto_2()" background="background.png">
-    <button class="pop_menu" id="pop_menu_id" onclick="pop_menu()">>></button>
+    <button class="pop_menu" id="pop_menu_id" onclick="pop_menu();auto_add()">>></button>
     <button class="info" id="info_id" onclick="info_f()">Info</button>
     <div class="info_div" id="info_div_id">
         <p class="info_p">Info about user's</p>
@@ -20,6 +20,11 @@
     <p class="tittle_website">Clicker</p>
 <div class="ddd">
     <button class="remove_data" id="remove_data_id" onclick="remove_data_f()">Remove data</button>
+</div>
+<div class="register_again" id="register_again_id">
+    <p class="warning">alert</p>
+    <button class="hide_alert" onclick="hide_alert_2_f()">×</button>
+    <p class="register_again_p" id="register_again_p_id">Try again create profile</p>
 </div>
     <div class="register_complete" id="register_complete_id">  
         <p class="warning">alert</p>
